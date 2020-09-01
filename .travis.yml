@@ -627,7 +627,7 @@ addons:
       - libpcap-dev
       - xsltproc
       - libxml2-utils
-      #- libsystemd-journal-dev
+      - libsystemd-journal-dev
       - librpm-dev
       # From deadsnakes PPA
       - python3.6
