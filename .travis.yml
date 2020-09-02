@@ -646,9 +646,10 @@ before_script:
   - chmod -R go-w $GOPATH/src/github.com/elastic/beats
   # Docker-compose installation
   - sudo rm /usr/local/bin/docker-compose || true
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
+  - sudo apt-get install docker-compose
+  #- curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  #- chmod +x docker-compose
+  #- sudo mv docker-compose /usr/local/bin
   - if [ $TRAVIS_OS_NAME = osx ]; then pip install virtualenv==16.7.9; fi
   - make mage
 
