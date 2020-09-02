@@ -15,7 +15,7 @@ env:
     - DOCKER_COMPOSE_VERSION=1.21.0
     - TRAVIS_GO_VERSION=$(cat .go-version)
     # Newer versions of minikube fail on travis, see: https://github.com/kubernetes/minikube/issues/2704
-    - TRAVIS_MINIKUBE_VERSION=v0.25.2
+    - TRAVIS_MINIKUBE_VERSION=v1.12.3
     - MACOSX_DEPLOYMENT_TARGET=10.15
     # Enable verbose output since Travis users cannot access test output that is written to files.
     # The constant output from tests also prevents time-outs.
