@@ -1,5 +1,5 @@
 sudo: required
-dist: trusty
+dist: bionic
 services:
   - docker
 
@@ -627,6 +627,7 @@ addons:
       - libpcap-dev
       - xsltproc
       - libxml2-utils
+      - libsystemd
       #- libsystemd-journal-dev
       - librpm-dev
       # From deadsnakes PPA
