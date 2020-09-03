@@ -49,7 +49,7 @@ func ModuleDocs() error {
 	var configs []string
 	params := map[string]interface{}{
 		"GOOS":      "linux",
-		"GOARCH":    "amd64",
+		"GOARCH":    "arm64",
 		"ArchBits":  archBits,
 		"Reference": false,
 	}
