@@ -174,7 +174,7 @@ func CrossBuildXPack(options ...CrossBuildOption) error {
 // mage -compile is done only once rather than in each Docker container.
 func buildMage() error {
 	return sh.RunWith(map[string]string{"CGO_ENABLED": "0"}, "mage", "-f", "-goos=linux", "-goarch=arm64",
-		"-compile", CreateDir(filepath.Join("build", "mage-linux-amd64")))
+		"-compile", CreateDir(filepath.Join("build", "mage-linux-arm64")))
 }
 
 func crossBuildImage(platform string) (string, error) {
@@ -231,7 +231,7 @@ func (b GolangCrossBuilder) Build() error {
 	}
 	workDir := filepath.ToSlash(filepath.Join(mountPoint, cwd))
 
-	buildCmd, err := filepath.Rel(workDir, filepath.Join(mountPoint, repoInfo.SubDir, "build/mage-linux-amd64"))
+	buildCmd, err := filepath.Rel(workDir, filepath.Join(mountPoint, repoInfo.SubDir, "build/mage-linux-arm64"))
 	if err != nil {
 		return errors.Wrap(err, "failed to determine mage-linux-amd64 relative path")
 	}
